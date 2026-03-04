@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1767958245775868555}
   - component: {fileID: 3783363329240425389}
   m_Layer: 7
-  m_Name: HairStrand
+  m_Name: Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.831, y: 2.141, z: -4.661}
-  m_LocalScale: {x: 0.35407925, y: 0.35407925, z: 0.35407925}
+  m_LocalScale: {x: 0.19759746, y: 0.19759746, z: 0.19759746}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7891e7f01e3b16d429206429dfe87563, type: 2}
+  - {fileID: 2100000, guid: ad9d67277f8930b4ebedcbb2664fe59b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
