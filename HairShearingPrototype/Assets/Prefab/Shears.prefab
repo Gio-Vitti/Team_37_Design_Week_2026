@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 362758905597554831}
   - component: {fileID: 6141573471491522597}
   - component: {fileID: 2974223489025333550}
-  - component: {fileID: 6794362392440367453}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -91,27 +90,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6794362392440367453
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307724742951494003}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3441329280304713953
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +102,6 @@ GameObject:
   - component: {fileID: 9145054180379423991}
   - component: {fileID: 1592756580660513525}
   - component: {fileID: 7756377792096133582}
-  - component: {fileID: 223910685992875809}
   - component: {fileID: 7957556081478887178}
   m_Layer: 0
   m_Name: Shears
@@ -141,14 +118,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3441329280304713953}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.0591, y: 2.2329, z: -5.0912}
+  m_LocalRotation: {x: -0, y: 0.93573886, z: 0.35269368, w: 0}
+  m_LocalPosition: {x: 0.0591, y: 2.244, z: -4.602}
   m_LocalScale: {x: 0.26268563, y: 0.45484796, z: 0.120585866}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 362758905597554831}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -41.304, y: 180, z: 0}
 --- !u!33 &9145054180379423991
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -225,25 +202,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 20.300837}
-  m_Center: {x: 0, y: 0, z: -9.650419}
---- !u!114 &223910685992875809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3441329280304713953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c99f02ca075af4fb3f9422703beba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHandScript
-  camDistance: 3
-  sensitivity: 1
-  hairLayer:
-    serializedVersion: 2
-    m_Bits: 128
+  m_Size: {x: 1, y: 1, z: 1.1666965}
+  m_Center: {x: 0, y: -0.0000027208462, z: -0.08334948}
 --- !u!54 &7957556081478887178
 Rigidbody:
   m_ObjectHideFlags: 0
