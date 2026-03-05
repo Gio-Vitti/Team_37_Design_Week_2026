@@ -14,6 +14,7 @@ public class PlayerHandScript : MonoBehaviour
     public float strength;
     private bool shaving = false;
     private Collider col;
+    private AudioSource shaveSound;
  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
@@ -21,6 +22,7 @@ public class PlayerHandScript : MonoBehaviour
     {
        
         col = GetComponent<Collider>();
+        shaveSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,10 +30,12 @@ public class PlayerHandScript : MonoBehaviour
     {
         if (Mouse.current.leftButton.isPressed)
         {
+           
             col.enabled = true;
 
         } else
         {
+            shaveSound.Play();
             col.enabled = false;
         }
 
