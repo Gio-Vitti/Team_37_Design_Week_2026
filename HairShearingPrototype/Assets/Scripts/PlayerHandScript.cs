@@ -15,6 +15,7 @@ public class PlayerHandScript : MonoBehaviour
     private bool shaving = false;
     private Collider col;
     private AudioSource shaveSound;
+    private MeshRenderer mesh;
  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
@@ -23,32 +24,36 @@ public class PlayerHandScript : MonoBehaviour
        
         col = GetComponent<Collider>();
         shaveSound = GetComponent<AudioSource>();
+        mesh = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Shave when pressed
         if (Mouse.current.leftButton.isPressed)
         {
-           
+            Debug.Log("active");
             col.enabled = true;
 
         } else
         {
             shaveSound.Play();
+            Debug.Log("notActive");
             col.enabled = false;
         }
 
+        //Control size
         Vector2 scroll = Mouse.current.scroll.ReadValue();
-       
+
         if (scroll.y > 0 && transform.localScale.y < 1)
         {
-            transform.localScale += Vector3.one * 0.1f;
+            SizeUp();
         }
 
         if (scroll.y < 0 && transform.localScale.y > 0)
         {
-            transform.localScale -= Vector3.one * 0.1f;
+            SizeDown();
         }
     }
 
@@ -56,7 +61,9 @@ public class PlayerHandScript : MonoBehaviour
     {     
         //make hair fall
             Rigidbody otherRb = other.GetComponent<Rigidbody>();
+            otherRb.constraints = RigidbodyConstraints.None;
             otherRb.useGravity = true;
+
         //send hair flying in random directions
         Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), 1, Random.Range(-1f, 1f));
         otherRb.AddForce(randomDirection.normalized * strength, ForceMode.Impulse);
@@ -69,4 +76,23 @@ public class PlayerHandScript : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Destroy(obj);
     } 
+
+    private IEnumerator SizeIndicator()
+    {
+        mesh.enabled = true;
+        yield return new WaitForSeconds(2);
+        mesh.enabled = false;
+    }
+
+    private void SizeUp()
+    {
+        transform.localScale += Vector3.one * 0.1f;
+        StartCoroutine(SizeIndicator());
+    }
+
+    private void SizeDown()
+    {
+        transform.localScale -= Vector3.one * 0.1f;
+        StartCoroutine(SizeIndicator());
+    }
 }
