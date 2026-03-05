@@ -16,6 +16,7 @@ public class PlayerHandScript : MonoBehaviour
     private Collider col;
     private AudioSource shaveSound;
     private MeshRenderer mesh;
+    private float timeDelay = 0;
  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
@@ -33,13 +34,12 @@ public class PlayerHandScript : MonoBehaviour
         //Shave when pressed
         if (Mouse.current.leftButton.isPressed)
         {
-            Debug.Log("active");
+           
             col.enabled = true;
-
+            
         } else
         {
             shaveSound.Play();
-            Debug.Log("notActive");
             col.enabled = false;
         }
 
@@ -54,6 +54,16 @@ public class PlayerHandScript : MonoBehaviour
         if (scroll.y < 0 && transform.localScale.y > 0)
         {
             SizeDown();
+        }
+
+        //Show signifier for size
+        if (timeDelay > 0)
+        {
+            mesh.enabled = true;
+            timeDelay -= Time.deltaTime;
+        } else
+        {
+            mesh.enabled = false;
         }
     }
 
@@ -77,22 +87,15 @@ public class PlayerHandScript : MonoBehaviour
         Destroy(obj);
     } 
 
-    private IEnumerator SizeIndicator()
-    {
-        mesh.enabled = true;
-        yield return new WaitForSeconds(2);
-        mesh.enabled = false;
-    }
-
     private void SizeUp()
     {
         transform.localScale += Vector3.one * 0.1f;
-        StartCoroutine(SizeIndicator());
+        timeDelay = 1;
     }
 
     private void SizeDown()
     {
         transform.localScale -= Vector3.one * 0.1f;
-        StartCoroutine(SizeIndicator());
+        timeDelay = 1;
     }
 }
