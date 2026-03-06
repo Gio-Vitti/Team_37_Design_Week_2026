@@ -17,6 +17,9 @@ public class PlayerHandScript : MonoBehaviour
     private AudioSource shaveSound;
     private MeshRenderer mesh;
     private float timeDelay = 0;
+
+    public GameObject handUp;
+    public GameObject handDown;
  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
@@ -36,11 +39,15 @@ public class PlayerHandScript : MonoBehaviour
         {
            
             col.enabled = true;
+            handUp.SetActive(false);
+            handDown.SetActive(true);
             
         } else
         {
             shaveSound.Play();
             col.enabled = false;
+            handDown.SetActive(false);
+            handUp.SetActive(true);
         }
 
         //Control size
