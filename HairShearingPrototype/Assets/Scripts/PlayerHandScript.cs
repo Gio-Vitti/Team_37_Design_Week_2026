@@ -53,7 +53,7 @@ public class PlayerHandScript : MonoBehaviour
         //Control size
         Vector2 scroll = Mouse.current.scroll.ReadValue();
 
-        if (scroll.y > 0 && transform.localScale.y < 1)
+        if (scroll.y > 0 && transform.localScale.y < 2)
         {
             SizeUp();
         }
